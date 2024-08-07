@@ -1,5 +1,118 @@
+// Main Container Styles
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+// Purchase Summary Styles
+
+.purchase-detail-card {
+    margin-top: 10px;
+    padding-top: 40px;
+    border-radius: 0;
+    height: max-content;
+    border: none;
+    margin-bottom: 40px;
+}
+
+.purchase-detail-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.accordion-item {
+    border: none;
+    border-radius: 0;
+    // border-top: 1px solid rgba($color: #000000, $alpha: .2);
+    box-shadow: 0px 6px 8px rgba($color: #000000, $alpha: .2);
+}
+
+.accordion-body {
+    border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+}
+
+.accordion-button {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    border: none !important;
+    border-top: 1px solid rgba($color: #000000, $alpha: 1.0);
+}
+
+.custom-accordion-button::after {
+    display: none;
+}
+
+.custom-accordion-button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.title-style {
+    font-size: 1.1rem;
+}
+
+.price-style {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.discount-price {
+    color: #00BC57;
+}
+
+.total-title,
+.total-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.icon-accordion-button {
+    color: #0077ff;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .icon-accordion-button {
+    transform: rotate(180deg);
+}
+
+
+// Form Checkout Styles
+
+.form-label {
+    font-weight: 600;
+}
+
+strong {
+    color: #ff0000;
+}
+
+.form-control,
+.form-select {
+    height: 48px;
+    border-radius: 2px;
+    box-shadow: none;
+    outline-color: #0077ff;
+}
+
 .card-brands {
-    margin-top: 14px;
+    width: 90%;
+    margin: 20px auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .card-brands img {
@@ -7,11 +120,4 @@
     height: 20px;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
-}
-
-
-.purchase-summary-card {
-    margin-top: 32px;
-    border-radius: 0;
-    height: max-content;
 }
