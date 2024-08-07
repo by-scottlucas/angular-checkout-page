@@ -1,1 +1,112 @@
-<p>checkout works!</p>
+<main class="container-fluid mt-5">
+
+    <div class="container">
+
+        <div class="row justify-content-evenly">
+            <div class="col-6">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome do titular (Impresso no cartão) *</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nome Completo">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="card-number" class="form-label">Número do cartão *</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="card-number" name="card-number"
+                            placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
+
+                    <div class="card-brands">
+                        <img src="../../../assets/visa_icon.png" id="visa" alt="Visa">
+                        <img src="../../../assets/mastercard_icon.png" id="mastercard" alt="MasterCard">
+                        <img src="../../../assets/elo_icon.png" id="elo" alt="Elo">
+                        <img src="../../../assets/hipercard_icon.png" id="hipercard" alt="Hipercard">
+                        <img src="../../../assets/american_Express_icon.png" id="american-express"
+                            alt="American Express">
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label for="expiration" class="form-label">Validade *</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="expiration" name="expiration"
+                                placeholder="MM/AAAA">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-6">
+                        <label for="cvv" class="form-label">CVV *</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cvv" name="cvv" placeholder="•••">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="card-number" class="form-label">Número de Parcelas *</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>1x 114,90</option>
+                        <option value="1">1x 114,90</option>
+                        <option value="2">2x 57,45</option>
+                        <option value="3">3x 38,30</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cpfCnpj" class="form-label">CPF/CNPJ *</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="cpfCnpj" name="cpfCnpj" placeholder="CPF/CNPJ">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4 card p-4 purchase-summary-card">
+
+                <h4 class="mb-0">Resumo da compra</h4>
+
+                <hr>
+
+                <ul class="p-0 m-0">
+
+                    <li class="d-flex justify-content-between">
+                        <p>Subtotal</p>
+                        <p>R$ 120,00</p>
+                    </li>
+
+                    <li class="d-flex justify-content-between">
+                        <p>Desconto</p>
+                        <p>R$ 20,00</p>
+                    </li>
+
+                    <li class="d-flex justify-content-between">
+                        <p>Frete</p>
+                        <p>R$ 14,90</p>
+                    </li>
+
+                </ul>
+
+                <hr>
+
+                <div class="d-flex justify-content-between">
+                    <p>Total</p>
+                    <p>R$ 114,90</p>
+                </div>
+
+                <button class="checkout-button">
+                    Finalizar Compra
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>

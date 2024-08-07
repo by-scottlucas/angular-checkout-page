@@ -1,0 +1,17 @@
+.card-brands {
+    margin-top: 14px;
+}
+
+.card-brands img {
+    // width: 50px;
+    height: 20px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+
+.purchase-summary-card {
+    margin-top: 32px;
+    border-radius: 0;
+    height: max-content;
+}
