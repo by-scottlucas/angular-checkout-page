@@ -19,7 +19,7 @@
     border-radius: 0;
     height: max-content;
     border: none;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .purchase-detail-title {
@@ -120,4 +120,18 @@ strong {
     height: 20px;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
+}
+
+.group-buttons {
+    margin-bottom: 25px;
+}
+
+.checkout-form-button {
+    height: 54px;
+    border-radius: 2px;
+}
+
+.finalize-purchase-button {
+    color: #FFF;
+    background: #212129;
 }
