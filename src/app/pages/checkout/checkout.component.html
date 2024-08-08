@@ -1,112 +1,129 @@
+<app-header></app-header>
+
 <main class="container-fluid m-0 p-0 mt-lg-3">
 
     <div class="container-content justify-content-evenly align-content-center">
 
-        <div class="col-12 col-md-12 col-lg-4 card p-0 p-md-4 purchase-detail-card">
+        <!-- Purchase Details Card -->
 
-            <div class="accordion d-lg-none" id="purchaseDetailAccordion">
-                <div class="accordion-item">
+        <div class="col-12 col-md-12 col-lg-4 ">
 
-                    <div id="accordionItemCollapse" class="accordion-collapse collapse"
-                        data-bs-parent="#purchaseDetailAccordion">
-                        <div class="accordion-body">
+            <div class="card p-0 p-md-4 purchase-detail-card">
 
-                            <h2 class="purchase-detail-title mb-0">
-                                Resumo da compra
-                            </h2>
+                <div class="accordion d-lg-none" id="purchaseDetailAccordion">
+                    <div class="accordion-item">
 
-                            <hr>
+                        <div id="accordionItemCollapse" class="accordion-collapse collapse"
+                            data-bs-parent="#purchaseDetailAccordion">
+                            <div class="accordion-body">
 
-                            <ul class="purchase-detail-items p-0 m-0">
+                                <h2 class="purchase-detail-title mb-0">
+                                    Resumo da compra
+                                </h2>
 
-                                <li class="d-flex justify-content-between subtotal-box">
-                                    <p class="subtotal-title title-style">Subtotal</p>
-                                    <p class="subtotal-price price-style">R$ 120,00</p>
-                                </li>
+                                <hr>
 
-                                <li class="d-flex justify-content-between discount-box">
-                                    <p class="discount-title title-style">Desconto</p>
-                                    <p class="discount-price price-style">- R$ 20,00</p>
-                                </li>
+                                <ul class="purchase-detail-items p-0 m-0">
 
-                                <li class="d-flex justify-content-between shipping-box">
-                                    <p class="shipping-title title-style">Frete</p>
-                                    <p class="shipping-price price-style">R$ 14,90</p>
-                                </li>
+                                    <li class="d-flex justify-content-between subtotal-box">
+                                        <p class="subtotal-title title-style">Subtotal</p>
+                                        <p class="subtotal-price price-style">R$ 120,00</p>
+                                    </li>
 
-                            </ul>
+                                    <li class="d-flex justify-content-between discount-box">
+                                        <p class="discount-title title-style">Desconto</p>
+                                        <p class="discount-price price-style">- R$ 20,00</p>
+                                    </li>
 
-                        </div>
-                    </div>
+                                    <li class="d-flex justify-content-between shipping-box">
+                                        <p class="shipping-title title-style">Frete</p>
+                                        <p class="shipping-price price-style">R$ 14,90</p>
+                                    </li>
 
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button custom-accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#accordionItemCollapse" aria-expanded="true"
-                            aria-controls="accordionItemCollapse">
+                                </ul>
 
-                            <div class="d-flex justify-content-between w-100 total-box">
-                                <p class="mb-0 total-title">Total</p>
-                                <p class="mb-0 total-price">R$ 114,90</p>
                             </div>
+                        </div>
 
-                            <i class="bi bi-chevron-down icon-accordion-button"></i>
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button custom-accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#accordionItemCollapse" aria-expanded="true"
+                                aria-controls="accordionItemCollapse">
 
-                        </button>
+                                <div class="d-flex justify-content-between w-100 total-box">
+                                    <p class="mb-0 total-title">Total</p>
+                                    <p class="mb-0 total-price">R$ 114,90</p>
+                                </div>
+
+                                <i class="bi bi-chevron-down icon-accordion-button"></i>
+
+                            </button>
+                        </h2>
+
+                    </div>
+                </div>
+
+                <div class="d-none d-lg-block">
+
+                    <h2 class="purchase-detail-title mb-0">
+                        Resumo da compra
                     </h2>
 
+                    <hr>
+
+                    <ul class="purchase-detail-items p-0 m-0">
+
+                        <li class="d-flex justify-content-between subtotal-box">
+                            <p class="subtotal-title title-style">Subtotal</p>
+                            <p class="subtotal-price price-style">R$ 120,00</p>
+                        </li>
+
+                        <li class="d-flex justify-content-between discount-box">
+                            <p class="discount-title title-style">Desconto</p>
+                            <p class="discount-price price-style">- R$ 20,00</p>
+                        </li>
+
+                        <li class="d-flex justify-content-between shipping-box">
+                            <p class="shipping-title title-style">Frete</p>
+                            <p class="shipping-price price-style">R$ 14,90</p>
+                        </li>
+
+                    </ul>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between total-box">
+                        <p class="total-title">Total</p>
+                        <p class="total-price">R$ 114,90</p>
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="d-none d-lg-block">
+            <div class="group-buttons d-none d-lg-block mt">
 
-                <h2 class="purchase-detail-title mb-0">
-                    Resumo da compra
-                </h2>
-
-                <hr>
-
-                <ul class="purchase-detail-items p-0 m-0">
-
-                    <li class="d-flex justify-content-between subtotal-box">
-                        <p class="subtotal-title title-style">Subtotal</p>
-                        <p class="subtotal-price price-style">R$ 120,00</p>
-                    </li>
-
-                    <li class="d-flex justify-content-between discount-box">
-                        <p class="discount-title title-style">Desconto</p>
-                        <p class="discount-price price-style">- R$ 20,00</p>
-                    </li>
-
-                    <li class="d-flex justify-content-between shipping-box">
-                        <p class="shipping-title title-style">Frete</p>
-                        <p class="shipping-price price-style">R$ 14,90</p>
-                    </li>
-
-                </ul>
-
-                <hr>
-
-                <div class="d-flex justify-content-between total-box">
-                    <p class="total-title">Total</p>
-                    <p class="total-price">R$ 114,90</p>
-                </div>
-
-                <button class="checkout-form-button finalize-purchase-button btn w-100">
+                <button class="checkout-form-button finalize-purchase-button btn mt-lg-0">
                     Finalizar Compra
+                </button>
+
+                <button class="checkout-form-button return-button btn bg-transparent mt-1 border-1">
+                    Voltar
                 </button>
 
             </div>
 
         </div>
 
-        <div class="col-11 col-md-11 m-auto m-lg-0 col-lg-7 p-md-4 form-checkout-card">
+        <!-- Form Checkout Card  -->
+
+        <div class="col-10 col-md-11 m-auto m-lg-0 col-lg-7 p-md-4 form-checkout-card">
 
             <div class="mb-3">
 
                 <label for="name" class="form-label">
                     Nome do titular (Impresso no cartão) <strong>*</strong>
                 </label>
-
                 <div class="input-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nome Completo">
                 </div>
@@ -119,18 +136,19 @@
                     Número do cartão <strong>*</strong>
                 </label>
 
-                <div class="input-group">
-                    <input type="number" class="form-control" id="card-number" name="card-number"
-                        placeholder="XXXX-XXXX-XXXX-XXXX">
+                <div class="position-relative w-100">
+
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="card-number" name="card-number"
+                            placeholder="XXXX-XXXX-XXXX-XXXX" (input)="checkCardBrand($event)">
+
+                    </div>
+
+                    <img [src]="cardBrandImage" id="cardBrand" alt="cardBrand" [class.active]="cardBrand"
+                        class="card-brand position-absolute">
+
                 </div>
 
-                <div class="card-brands">
-                    <img src="../../../assets/visa_icon.png" id="visa" alt="Visa">
-                    <img src="../../../assets/mastercard_icon.png" id="mastercard" alt="MasterCard">
-                    <img src="../../../assets/elo_icon.png" id="elo" alt="Elo">
-                    <img src="../../../assets/hipercard_icon.png" id="hipercard" alt="Hipercard">
-                    <img src="../../../assets/american_Express_icon.png" id="american-express" alt="American Express">
-                </div>
             </div>
 
             <div class="row">
@@ -139,11 +157,12 @@
 
                     <label for="expiration" class="form-label">
                         Validade <strong>*</strong>
-                        <i class="ms-2 bi bi-info-circle-fill"></i>
+                        <i class="ms-2 bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip"
+                            title="A validade do cartão é o mês e o ano que ele vai expirar, geralmente você o encontra na parte da frente do cartão"></i>
                     </label>
 
                     <div class="input-group">
-                        <input type="text" class="form-control" id="expiration" name="expiration" placeholder="MM/AAAA">
+                        <input type="text" class="form-control" id="expiration" name="expiration" placeholder="MM/AA">
                     </div>
 
                 </div>
@@ -152,9 +171,9 @@
 
                     <label for="cvv" class="form-label">
                         CVV <strong>*</strong>
-                        <i class="ms-2 bi bi-info-circle-fill"></i>
+                        <i class="ms-2 bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip"
+                            title="O código de segurança (CVV) tem 3 ou 4 números e geralmente você o encontra na parte de trás do seu cartão de crédito."></i>
                     </label>
-
                     <div class="input-group">
                         <input type="text" class="form-control" id="cvv" name="cvv" placeholder="•••">
                     </div>
@@ -180,23 +199,23 @@
 
             <div class="mb-3">
 
-                <label for="cpfCnpj" class="form-label">
+                <label for="cpf-cnpj" class="form-label">
                     CPF/CNPJ <strong>*</strong>
                 </label>
-
                 <div class="input-group">
-                    <input type="text" class="form-control" id="cpfCnpj" name="cpfCnpj" placeholder="CPF/CNPJ">
+                    <input type="text" class="form-control" id="cpf-cnpj" name="cpf-cnpj" placeholder="CPF/CNPJ">
                 </div>
 
             </div>
 
             <div class="group-buttons d-lg-none">
 
-                <button class="checkout-form-button finalize-purchase-button btn w-100 mt-3 mt-md-0">
+                <button class="checkout-form-button finalize-purchase-button btn mt-3 mt-md-0">
                     Finalizar Compra
                 </button>
 
-                <button class="checkout-form-button return-button btn bg-transparent w-100 mt-2">
+                <button
+                    class="checkout-form-button return-button btn bg-transparent mt-2 border-1 border-black border-opacity-25">
                     Voltar
                 </button>
 
@@ -207,3 +226,5 @@
     </div>
 
 </main>
+
+<app-footer></app-footer>
