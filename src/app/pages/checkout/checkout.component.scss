@@ -128,6 +128,7 @@ strong {
 
 .info-icon {
     cursor: pointer;
+    font-size: 1.1rem;
 }
 
 .card-brand {
@@ -158,6 +159,17 @@ strong {
     background: #212129;
 }
 
+
+.tooltip {
+    font-size: var(--bs-tooltip-font-size);
+    max-width: var(--bs-tooltip-max-width);
+    color: var(--bs-tooltip-color);
+    background-color: var(--bs-tooltip-bg);
+    border-radius: var(--bs-tooltip-border-radius);
+    opacity: var(--bs-tooltip-opacity);
+    padding: var(--bs-tooltip-padding-y) var(--bs-tooltip-padding-x);
+    margin: var(--bs-tooltip-margin);
+}
 
 //  ********** MEDIA QUERIES **********
 
@@ -220,6 +232,10 @@ strong {
         top: 22%;
         right: 2%;
         height: 30px;
+    }
+
+    .info-icon {
+        font-size: 1.6rem;
     }
 
     .checkout-form-button {
@@ -292,6 +308,10 @@ strong {
 
     .card-brand {
         height: 18px;
+    }
+
+    .info-icon {
+        font-size: 1rem;
     }
 
     .checkout-form-button {
