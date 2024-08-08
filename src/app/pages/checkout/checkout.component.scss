@@ -1,13 +1,13 @@
+// Global Styles
+
 * {
 
-    /* Para navegadores baseados em WebKit (Chrome, Safari) */
     input[type=number]::-webkit-outer-spin-button,
     input[type=number]::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
 
-    /* Para Firefox */
     input[type=number] {
         appearance: textfield;
         -moz-appearance: textfield;
@@ -159,16 +159,12 @@ strong {
     background: #212129;
 }
 
+.finalize-purchase-button:hover {
+    background: #292933;
+}
 
-.tooltip {
-    font-size: var(--bs-tooltip-font-size);
-    max-width: var(--bs-tooltip-max-width);
-    color: var(--bs-tooltip-color);
-    background-color: var(--bs-tooltip-bg);
-    border-radius: var(--bs-tooltip-border-radius);
-    opacity: var(--bs-tooltip-opacity);
-    padding: var(--bs-tooltip-padding-y) var(--bs-tooltip-padding-x);
-    margin: var(--bs-tooltip-margin);
+.return-button:hover {
+    border: 1px solid rgba($color: #000000, $alpha: .4);
 }
 
 //  ********** MEDIA QUERIES **********

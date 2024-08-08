@@ -33,10 +33,8 @@ export class CheckoutComponent {
 
   ngAfterViewInit() {
 
-    // Seleciona todos os elementos com data-bs-toggle="tooltip"
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
 
-    // Inicializa o tooltip com trigger de click
     const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl, {
         trigger: 'click'
@@ -84,7 +82,7 @@ export class CheckoutComponent {
   formatCpfCnpj(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     const value = inputElement.value;
-    this.inputCpfCnpj = this.cpfPipe.transform(this.inputCpfCnpj);
+    this.inputCpfCnpj = this.cpfPipe.transform(value);
 
     const validate = this.validatorsService.validateDocument(this.inputCpfCnpj);
 
@@ -104,7 +102,6 @@ export class CheckoutComponent {
   }
 
   formatCvvNumber(event: Event): void {
-
     const inputElement = event.target as HTMLInputElement;
     let value = inputElement.value;
   
@@ -115,7 +112,7 @@ export class CheckoutComponent {
     }
   
     inputElement.value = value;
-  
+
     this.inputCvv = value;
 
   }
