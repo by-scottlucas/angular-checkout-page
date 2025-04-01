@@ -132,3 +132,34 @@
 .accordion-button:not(.collapsed) .icon-accordion-button {
   transform: rotate(180deg);
 }
+
+.language-select-container {
+  margin-top: 20px;
+}
+
+.language-select {
+  width: 40%;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 8px 12px;
+  box-shadow: none;
+  border-radius: 3px;
+  outline-color: #0077ff;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+
+@media (min-width: 768px) {
+  .language-select-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    margin-top: 0;
+  }
+
+  .language-select {
+    width: 166px;
+  }
+}

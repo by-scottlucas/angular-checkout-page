@@ -1,26 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslationService } from 'src/app/services/translation.service'; // Importando o serviço de tradução
 import { DatePipe } from '../../pipes/date.pipe';
 import { CardPipe } from '../../pipes/card.pipe';
 import { CpfCnpjPipe } from '../../pipes/cpf-cnpj.pipe';
-import * as translations from '../../../../../assets/translate/pt-BR.json';
 
 @Component({
   selector: 'app-checkout-form',
   templateUrl: './checkout-form.component.html',
   styleUrls: ['./checkout-form.component.scss'],
 })
-export class CheckoutFormComponent {
+export class CheckoutFormComponent implements OnInit {
   checkoutForm: FormGroup;
   cardBrand: string | null = null;
   cardBrandImage = '../../../assets/credit_card_icon.svg';
-  translations: any = translations;
+  translations: any = {};
 
   constructor(
     private fb: FormBuilder,
     private datePipe: DatePipe,
     private cardPipe: CardPipe,
     private cpfPipe: CpfCnpjPipe,
+    private translationService: TranslationService
   ) {
     this.checkoutForm = this.fb.group({
       name: ['', [Validators.required]],
@@ -35,6 +36,12 @@ export class CheckoutFormComponent {
       ],
       installments: [1, [Validators.required]],
       cpfCnpj: ['', [Validators.required]],
+    });
+  }
+
+  ngOnInit(): void {
+    this.translationService.currentLanguage$.subscribe((language: string) => {
+      this.translations = this.translationService.getTranslations(language);
     });
   }
 
@@ -60,10 +67,7 @@ export class CheckoutFormComponent {
     ) {
       this.cardBrand = 'mastercard';
       this.cardBrandImage = '../../../assets/mastercard.png';
-    } else if (
-      cardNumber.startsWith('34') ||
-      cardNumber.startsWith('37')
-    ) {
+    } else if (cardNumber.startsWith('34') || cardNumber.startsWith('37')) {
       this.cardBrand = 'american-express';
       this.cardBrandImage = '../../../assets/american_exp.png';
     } else if (

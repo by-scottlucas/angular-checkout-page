@@ -1,7 +1,7 @@
 {
   "checkoutPage": {
     "detailSummaryCard": {
-      "title": "Resumo da Compra",
+      "title": "Resumen de la Compra",
       "detailsList": [
         {
           "subtotal": {
@@ -11,13 +11,13 @@
         },
         {
           "discount": {
-            "label": "Desconto"
+            "label": "Descuento"
           },
           "value": 20.0
         },
         {
           "shipping": {
-            "label": "Frete"
+            "label": "Envío"
           },
           "value": 14.9
         }
@@ -29,18 +29,18 @@
     }
   },
   "checkoutForm": {
-    "formTitle": "Pagamento",
+    "formTitle": "Pago",
     "formFields": {
       "name": {
-        "label": "Nome do titular (Impresso no cartão)",
-        "placeholder": "Nome Completo"
+        "label": "Nombre del titular (Impreso en la tarjeta)",
+        "placeholder": "Nombre Completo"
       },
       "cardNumber": {
-        "label": "Número do cartão",
+        "label": "Número de tarjeta",
         "placeholder": "XXXX-XXXX-XXXX-XXXX"
       },
       "expiration": {
-        "label": "Validade",
+        "label": "Validez",
         "placeholder": "MM/AA"
       },
       "cvv": {
@@ -48,7 +48,7 @@
         "placeholder": "•••"
       },
       "installments": {
-        "label": "Número de Parcelas"
+        "label": "Número de Cuotas"
       },
       "cpfCnpj": {
         "label": "CPF/CNPJ",
@@ -65,6 +65,6 @@
     "label": "Finalizar Compra"
   },
   "footerComponent": {
-    "label": "Pagamento processado por FinFlex"
+    "label": "Pago procesado por FinFlex"
   }
 }
