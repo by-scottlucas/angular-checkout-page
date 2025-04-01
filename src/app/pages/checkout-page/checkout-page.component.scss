@@ -1,0 +1,134 @@
+* {
+
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-height: 320px;
+
+  @media screen and (min-width: 1280px) {
+    background: #f7f7f7;
+  }
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @media screen and (min-width: 1280px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 80%;
+    margin-top: 80px;
+  }
+}
+
+.purchase-detail-card {
+  border: none;
+  border-radius: 0;
+  height: max-content;
+
+  @media screen and (min-width:1280px) {
+    border-radius: 3px;
+    background-color: #FFF;
+  }
+}
+
+.accordion-item {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: .2);
+}
+
+.purchase-detail-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.4rem;
+  }
+}
+
+.purchase-detail-items {
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width:1280px) {
+    gap: 10px;
+  }
+}
+
+.title-style {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.price-style {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.discount-price {
+  color: #00BC57;
+}
+
+.total-title,
+.total-price {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.accordion-button {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.custom-accordion-button::after {
+  display: none;
+}
+
+.custom-accordion-button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.icon-accordion-button {
+  color: #0077FF;
+  margin-top: 10px;
+  font-size: 1.4rem;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .icon-accordion-button {
+  transform: rotate(180deg);
+}

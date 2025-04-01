@@ -1,0 +1,83 @@
+<h2 class="form-title d-none d-lg-block mb-lg-3">{{ translations.checkoutForm.formTitle }}</h2>
+
+<form [formGroup]="checkoutForm" class="checkout-form d-flex flex-column gap-2 p-lg-4">
+  <div class="mb-3">
+    <label for="name" class="form-label">{{ translations.checkoutForm.formFields.name.label }}</label>
+    <input type="text" class="form-control" id="name" formControlName="name" placeholder="{{ translations.checkoutForm.formFields.name.placeholder }}">
+  </div>
+
+  <div class="mb-3">
+    <label for="card-number" class="form-label">{{ translations.checkoutForm.formFields.cardNumber.label }}</label>
+    <div class="position-relative w-100">
+      <input
+        type="text"
+        class="form-control"
+        id="card-number"
+        formControlName="cardNumber"
+        placeholder="{{ translations.checkoutForm.formFields.cardNumber.placeholder }}"
+        maxlength="19"
+        (input)="checkCardBrand($event)"
+        (input)="formatCardNumber($event)"
+      >
+      <img
+        [src]="cardBrandImage"
+        id="cardBrand"
+        alt="cardBrand"
+        [class.active]="cardBrand"
+        class="card-brand position-absolute"
+      >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="mb-3 col-6">
+      <label for="expiration" class="form-label">{{ translations.checkoutForm.formFields.expiration.label }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="expiration"
+        formControlName="expiration"
+        placeholder="{{ translations.checkoutForm.formFields.expiration.placeholder }}"
+        (input)="formatExpirationDate($event)"
+        maxlength="5"
+      >
+    </div>
+
+    <div class="mb-3 col-6">
+      <label for="cvv" class="form-label">{{ translations.checkoutForm.formFields.cvv.label }}</label>
+      <input
+        type="number"
+        class="form-control"
+        id="cvv"
+        formControlName="cvv"
+        placeholder="{{ translations.checkoutForm.formFields.cvv.placeholder }}"
+        maxlength="4"
+        (input)="formatCvvNumber($event)"
+      >
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="installments-box" class="form-label">{{ translations.checkoutForm.formFields.installments.label }}</label>
+
+    <select class="form-select" id="installments-box" formControlName="installments">
+      <option *ngFor="let option of translations.checkoutForm.installmentsOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="cpf-cnpj" class="form-label">{{ translations.checkoutForm.formFields.cpfCnpj.label }}</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cpf-cnpj"
+      formControlName="cpfCnpj"
+      placeholder="{{ translations.checkoutForm.formFields.cpfCnpj.placeholder }}"
+      (input)="formatCpfCnpj($event)"
+    >
+  </div>
+
+  <div class="d-lg-none">
+    <app-checkout-button></app-checkout-button>
+  </div>
+</form>

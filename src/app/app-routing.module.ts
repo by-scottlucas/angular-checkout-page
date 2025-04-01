@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { ModalComponent } from './components/modal/modal.component';
+
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'checkout', pathMatch: 'full' },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'modal', component: ModalComponent }
+  { path: 'checkout', component: CheckoutPageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

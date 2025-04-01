@@ -1,0 +1,58 @@
+{
+  "checkoutPage": {
+    "detailSummaryCard": {
+      "title": "Resumo da Compra",
+      "detailsList": [
+        {
+          "label": "Subtotal",
+          "value": 114.9
+        },
+        {
+          "label": "Desconto",
+          "value": 20.0
+        },
+        {
+          "label": "Frete",
+          "value": 14.9
+        }
+      ],
+      "detailsTotal": {
+        "label": "Total",
+        "value": 0.0
+      }
+    }
+  },
+  "checkoutForm": {
+    "formTitle": "Checkout",
+    "formFields": {
+      "name": {
+        "label": "Nome do titular (Impresso no cartão)",
+        "placeholder": "Nome Completo"
+      },
+      "cardNumber": {
+        "label": "Número do cartão",
+        "placeholder": "XXXX-XXXX-XXXX-XXXX"
+      },
+      "expiration": {
+        "label": "Validade",
+        "placeholder": "MM/AA"
+      },
+      "cvv": {
+        "label": "CVV",
+        "placeholder": "•••"
+      },
+      "installments": {
+        "label": "Número de Parcelas"
+      },
+      "cpfCnpj": {
+        "label": "CPF/CNPJ",
+        "placeholder": "CPF/CNPJ"
+      }
+    },
+    "installmentsOptions": [
+      "1x - 114,90",
+      "2x - 57,45",
+      "3x - 38,30"
+    ]
+  }
+}

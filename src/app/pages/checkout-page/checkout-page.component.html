@@ -1,0 +1,64 @@
+<main class="container-fluid pt-lg-4">
+  <div class="container-content d-lg-flex flex-lg-row-reverse">
+    <div class="col-12 col-lg-4 mt-lg-2">
+      <div class="card purchase-detail-card p-0 mt-lg-5 p-lg-4">
+        <div class="accordion d-lg-none" id="purchaseDetailAccordion">
+          <div class="accordion-item">
+            <div id="accordionItemCollapse" class="accordion-collapse collapse"
+              data-bs-parent="#purchaseDetailAccordion">
+              <div class="accordion-body">
+                <ng-container *ngTemplateOutlet="purchaseDetailContent"></ng-container>
+              </div>
+            </div>
+
+            <div class="accordion-header" id="headingOne">
+              <button class="accordion-button custom-accordion-button collapsed" data-bs-toggle="collapse"
+                data-bs-target="#accordionItemCollapse" aria-expanded="false" aria-controls="accordionItemCollapse">
+                <div class="d-flex justify-content-between w-100 total-box">
+                  <span class="mb-0 total-title">{{ translations.checkoutPage.detailSummaryCard.detailsTotal.label }}</span>
+                  <span class="mb-0 total-price">
+                    {{ translations.checkoutPage.detailSummaryCard.detailsTotal.value.toFixed(2) | currency:'BRL':'symbol' }}
+                  </span>
+                </div>
+                <i class="bi bi-chevron-down icon-accordion-button"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-none d-lg-block">
+          <ng-container *ngTemplateOutlet="purchaseDetailContent"></ng-container>
+        </div>
+
+        <ng-template #purchaseDetailContent>
+          <h2 class="purchase-detail-title mb-3 mb-lg-4 px-md-1">{{ translations.checkoutPage.detailSummaryCard.title }}</h2>
+
+          <ul class="purchase-detail-items p-0 m-0 px-md-1">
+            <li class="d-flex justify-content-between" *ngFor="let listTopic of translations.checkoutPage.detailSummaryCard.detailsList">
+              <span class="subtotal-title title-style">{{ listTopic.label }}</span>
+              <span class="subtotal-price price-style"
+                [ngClass]="listTopic.label.includes('Desconto') ? 'discount-price' : ''">
+                {{ listTopic.value | currency:'BRL':'symbol' }}
+              </span>
+            </li>
+          </ul>
+
+          <div class="d-none d-lg-flex justify-content-between total-box pt-lg-4">
+            <span class="total-title">{{ translations.checkoutPage.detailSummaryCard.detailsTotal.label }}</span>
+            <span class="total-price">
+              {{ translations.checkoutPage.detailSummaryCard.detailsTotal.value.toFixed(2) | currency:'BRL':'symbol' }}
+            </span>
+          </div>
+        </ng-template>
+      </div>
+
+      <div class="d-none d-lg-block mt-lg-3">
+        <app-checkout-button></app-checkout-button>
+      </div>
+    </div>
+
+    <div class="col-11 col-md-10 col-lg-7 m-auto mt-4 mt-md-5 m-lg-0">
+      <app-checkout-form></app-checkout-form>
+    </div>
+  </div>
+</main>
