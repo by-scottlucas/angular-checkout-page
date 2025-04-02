@@ -66,3 +66,6 @@ Este projeto foi desenvolvido por **Lucas Santos Silva**, Desenvolvedor Full Sta
 
 Este projeto está licenciado sob a [**Licença MIT**](./LICENSE).
 
+## Imagem do Projeto
+
+![Angular Checkout Page](./src/assets/project_thumb.png)
