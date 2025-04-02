@@ -1,7 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { TranslationService } from 'src/app/services/translation.service';
+import { TranslationService } from './services/translation.service';
 
 @Component({
   selector: 'app-checkout-page',
@@ -22,18 +22,17 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.languageSubscription = this.translationService.currentLanguage$.subscribe((language: string) => {
       this.language = language;
-      this.translations = this.translationService.getTranslations(language);
-      this.purchaseTotal();
+      this.translationService.getTranslations().subscribe((translations: any) => {
+        this.translations = translations;
+        this.purchaseTotal();
+      });
     });
 
-    this.purchaseTotal();
     this.setAvailableLanguages();
   }
 
   ngOnDestroy(): void {
-    if (this.languageSubscription) {
-      this.languageSubscription.unsubscribe();
-    }
+    this.languageSubscription?.unsubscribe();
   }
 
   purchaseTotal() {

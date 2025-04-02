@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { TranslationService } from 'src/app/services/translation.service';
+
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-checkout-button',
@@ -14,14 +15,14 @@ export class CheckoutButtonComponent implements OnInit, OnDestroy {
   constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
-    this.languageSubscription = this.translationService.currentLanguage$.subscribe((language: string) => {
-      this.translations = this.translationService.getTranslations(language);
+    this.languageSubscription = this.translationService.currentLanguage$.subscribe(() => {
+      this.translationService.getTranslations().subscribe((translations: any) => {
+        this.translations = translations;
+      });
     });
   }
 
   ngOnDestroy(): void {
-    if (this.languageSubscription) {
-      this.languageSubscription.unsubscribe();
-    }
+    this.languageSubscription?.unsubscribe();
   }
 }

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TranslationService } from 'src/app/services/translation.service'; // Importando o serviço de tradução
-import { DatePipe } from '../../pipes/date.pipe';
+
 import { CardPipe } from '../../pipes/card.pipe';
 import { CpfCnpjPipe } from '../../pipes/cpf-cnpj.pipe';
+import { DatePipe } from '../../pipes/date.pipe';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-checkout-form',
@@ -40,8 +41,12 @@ export class CheckoutFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.translationService.currentLanguage$.subscribe((language: string) => {
-      this.translations = this.translationService.getTranslations(language);
+    this.translationService.currentLanguage$.subscribe(() => {
+      this.translationService
+        .getTranslations()
+        .subscribe((translations: any) => {
+          this.translations = translations;
+        });
     });
   }
 
@@ -85,7 +90,7 @@ export class CheckoutFormComponent implements OnInit {
     }
   }
 
-  formatCpfCnpj(event: Event) {
+  formatDocument(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     const value = inputElement.value;
     this.checkoutForm.patchValue({ cpfCnpj: this.cpfPipe.transform(value) });
@@ -93,9 +98,21 @@ export class CheckoutFormComponent implements OnInit {
 
   formatExpirationDate(event: Event) {
     const inputElement = event.target as HTMLInputElement;
-    const value = inputElement.value;
+    let value = inputElement.value.replace(/\D/g, '');
+
+    if (value.length > 2) {
+      const month = parseInt(value.substring(0, 2), 10);
+      if (month > 12) {
+        value = '12' + value.substring(2);
+      }
+    }
+
+    if (value.length > 2) {
+      value = value.substring(0, 2) + '/' + value.substring(2, 4);
+    }
+
     this.checkoutForm.patchValue({
-      expiration: this.datePipe.transform(value),
+      expiration: value,
     });
   }
 
